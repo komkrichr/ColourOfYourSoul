@@ -163,14 +163,6 @@
     margin: 28px auto 36px;
   }
 
-  .section-no {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 13px;
-    color: var(--gold);
-    margin-bottom: 4px;
-    letter-spacing: 0.05em;
-  }
   label {
     display: block;
     font-family: var(--sans);
@@ -240,18 +232,10 @@
     top: 10px; right: 12px;
     color: var(--gold); font-size: 14px;
   }
-  .season-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 0.05em;
-  }
   .season-name {
     font-family: var(--serif);
     font-size: 22px;
     font-weight: 500;
-    margin-top: 2px;
     color: var(--ink);
     line-height: 1;
   }
@@ -513,12 +497,9 @@
   .swatch {
     background: #fff; border: none;
     border-right: 1px solid var(--line);
-    cursor: pointer; padding: 0; font-family: inherit;
-    transition: transform 0.3s;
     position: relative;
   }
   .swatch:last-child { border-right: none; }
-  .swatch:hover { transform: scale(1.03); z-index: 2; }
   .swatch-color { height: 70px; }
   .swatch-hex {
     font-family: var(--serif);
@@ -527,69 +508,16 @@
     padding: 8px 4px; text-align: center;
     color: var(--ink-soft);
     border-top: 1px solid var(--line);
-    transition: color 0.3s;
   }
-  .swatch.copied .swatch-hex { color: var(--gold); font-style: italic; }
-  .palette-hint {
+  .palette-context {
     text-align: center;
     font-family: var(--serif);
     font-style: italic;
-    font-size: 12px;
-    color: var(--ink-muted);
-    margin-top: 12px;
-  }
-
-  .looks-grid {
-    border-top: 1px solid var(--line);
-    margin: 16px 0 0;
-  }
-  .look {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 24px;
-    padding: 22px 0;
-    border-bottom: 1px solid var(--line);
-    align-items: start;
-  }
-  .look-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    margin-bottom: 4px;
-  }
-  .look-meta h4 {
-    font-family: var(--serif);
-    font-size: 22px;
-    font-weight: 500;
-    margin: 0 0 6px;
-    line-height: 1;
-    color: var(--ink);
-  }
-  .look-mood {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 12px;
-    color: var(--ink-muted);
-    margin: 0;
-    line-height: 1.4;
-  }
-  .look-pieces { list-style: none; padding: 0; margin: 0; }
-  .look-pieces li {
     font-size: 13px;
-    color: var(--ink-soft);
-    padding: 4px 0;
-    line-height: 1.55;
-  }
-  .look-pieces li::before {
-    content: "—"; color: var(--gold); margin-right: 10px;
-  }
-  .look-pieces li em {
-    font-family: var(--serif);
-    font-style: italic;
-    color: var(--gold);
-    font-weight: 500;
+    color: var(--ink-muted);
+    margin: 0 auto 16px;
+    max-width: 420px;
+    line-height: 1.5;
   }
 
   .technique-grid {
@@ -728,11 +656,6 @@
     border-bottom: 1px solid var(--line-soft);
   }
   .guide-item:last-of-type { border-bottom: none; }
-  .guide-item .num {
-    font-family: var(--serif);
-    font-style: italic; font-size: 12px;
-    color: var(--gold); letter-spacing: 0.1em;
-  }
   .guide-item .name {
     font-family: var(--serif);
     font-size: 18px; margin: 2px 0 6px;
@@ -764,7 +687,6 @@
     .daily-card:last-child { border-bottom: none; }
     .power-of-day { grid-template-columns: 1fr; }
     .power-color-block { min-height: 140px; }
-    .look { grid-template-columns: 1fr; gap: 12px; }
     .technique-grid { grid-template-columns: 1fr; }
     .technique-grid > div { border-right: none; border-bottom: 1px solid var(--line); }
     .technique-grid > div:last-child { border-bottom: none; }
@@ -776,11 +698,11 @@
   <div class="bg-runway">RUNWAY</div>
   <div class="mag-stamp tl">Vol. I <span class="ornament">·</span> N° I</div>
   <div class="mag-stamp tr">The Cerulean Issue</div>
-  <div class="mag-stamp bl">L'Atelier des Couleurs</div>
+  <div class="mag-stamp bl">The Colour Studio</div>
   <div class="mag-stamp br"><span class="barcode"></span>That's all.</div>
 
   <div class="card">
-    <div class="brand">Maison Couleur <span class="ornament">✦</span> Atelier des Couleurs</div>
+    <div class="brand">The Colour Studio <span class="ornament">✦</span> Daily Lucky Reading</div>
 
     <h1>The Colour of <em>Your Soul</em></h1>
     <p class="tagline">เลือก<strong>สีมงคลประจำวัน</strong>ที่เหมาะกับ Personal Colour ของคุณ</p>
@@ -790,7 +712,6 @@
 
     <div id="step-input">
       <div class="field">
-        <div class="section-no">N° 01</div>
         <label>Date of Birth · วันเดือนปีเกิด</label>
         <div class="date-trio">
           <select id="day" required aria-label="วัน"></select>
@@ -801,7 +722,6 @@
       </div>
 
       <div class="field">
-        <div class="section-no">N° 02</div>
         <label>Personal Colour · โทนสีของคุณ</label>
         <div class="seasons" id="seasons"></div>
         <button type="button" class="link-btn" id="guideBtn">— ไม่รู้ว่าโทนไหน? เช็คได้ที่นี่</button>
@@ -832,18 +752,15 @@
       <div class="daily-trio" id="dailyTrio"></div>
       <div class="power-of-day" id="powerOfDay"></div>
 
-      <h3><span class="ornament">—</span> Your Full Palette · พาเลตต์ทั้งหมด <span class="ornament">—</span></h3>
+      <h3><span class="ornament">—</span> Your Lucky Palette · สีมงคลที่เข้ากับคุณ <span class="ornament">—</span></h3>
+      <p class="palette-context">พาเลตต์สีมงคลรวมจาก Personal Colour + ราศี ของคุณ — ทุกสีในนี้คือสีที่เข้ากับคุณที่สุด</p>
       <div class="palette" id="palette"></div>
-      <p class="palette-hint">Click any swatch to copy · คลิกเพื่อก๊อปปี้ hex</p>
-
-      <h3><span class="ornament">—</span> L'Editorial — Three Looks <span class="ornament">—</span></h3>
-      <div class="looks-grid" id="looksGrid"></div>
 
       <h3><span class="ornament">✦</span> The Technique · เทคนิคการแต่ง <span class="ornament">✦</span></h3>
       <div class="technique-grid" id="techniqueGrid"></div>
 
       <div class="advice">
-        <span class="label-tag">L'Atelier Suggests</span>
+        <span class="label-tag">Stylist's Note</span>
         <span id="adviceText"></span>
       </div>
 
@@ -886,25 +803,21 @@
 
       <h2 style="margin-top:24px">The Four Seasons</h2>
       <div class="guide-item">
-        <div class="num">N° 01</div>
         <div class="name">Spring · ใบไม้ผลิ</div>
         <div class="desc">ผิวอุ่นเหลืองทอง ส่องไฟผิวออกพีช ฟันขาว ผมน้ำตาลทอง</div>
         <em>Warm · Bright</em>
       </div>
       <div class="guide-item">
-        <div class="num">N° 02</div>
         <div class="name">Summer · ฤดูร้อน</div>
         <div class="desc">ผิวเย็นออกชมพู เส้นเลือดฟ้า ผมและตาดูนุ่มเรียบ</div>
         <em>Cool · Soft</em>
       </div>
       <div class="guide-item">
-        <div class="num">N° 03</div>
         <div class="name">Autumn · ใบไม้ร่วง</div>
         <div class="desc">ผิวเข้มอุ่น สีแทน ผมน้ำตาลเข้ม ตาน้ำตาลทอง</div>
         <em>Warm · Deep</em>
       </div>
       <div class="guide-item">
-        <div class="num">N° 04</div>
         <div class="name">Winter · ฤดูหนาว</div>
         <div class="desc">ผิวขาวเย็น คอนทราสต์ชัดสูง ผมดำสนิท ตาเข้ม</div>
         <em>Cool · Bright</em>
@@ -942,29 +855,6 @@
     earth: { spring: 'Earth in bloom, fresh & alive',      summer: 'Earth softened, romantic',         autumn: 'Earth at its richest',           winter: 'Earth crystallised, refined' },
     air:   { spring: 'Air in romance',                      summer: 'Air at ease, breezy',             autumn: 'Air gilded with gold',          winter: 'Air electric, precise' },
     water: { spring: 'Water clear & flowing',              summer: 'Water still, profound',           autumn: 'Water with emerald depth',      winter: 'Water deep & mysterious' }
-  };
-
-  const STYLE_BY_ELEMENT = {
-    fire: {
-      daytime:   { mood: 'Structured. Polished. Power.',    pieces: ['Tailored blazer ในโทน <em>palette</em>', 'Silk shirt สี ivory หรือ stone', 'Slim wool trousers', 'Pointed leather loafers'] },
-      evening:   { mood: 'Confident. Magnetic. Brief.',     pieces: ['Leather mini หรือ sharp dress', 'Silk camisole สี <em>power hue</em>', 'Stiletto ส้นโลหะวับ', 'Architectural clutch ทรงเรขาคณิต'] },
-      statement: { mood: 'Unmistakable. Iconic.',            pieces: ['Power coat ในสี <em>signature</em>', 'Leather glove เนี้ยบ', 'Knee-high boot ทรงเพรียว', 'Dark sunglasses ทรง oversized'] }
-    },
-    earth: {
-      daytime:   { mood: 'Quiet luxury, well-made.',         pieces: ['Cashmere knit ในโทน <em>palette</em>', 'Wool trousers ทรงคลาสสิค', 'Leather tote ทรงโครงสร้าง', 'Gold-tone hoop หรือ stud'] },
-      evening:   { mood: 'Sensual. Composed.',               pieces: ['Silk slip dress สี tonal', 'Suede mule หรือ kitten heel', 'Bronze hardware เพิ่มความ luxe', 'Statement ring เม็ดเดียว'] },
-      statement: { mood: 'Heirloom-grade.',                  pieces: ['Tailored suit ในสี <em>signature</em>', 'Silk scarf hand-rolled edge', 'Penny loafer หนัง heritage', 'Signet ring หรือ pearl drop'] }
-    },
-    air: {
-      daytime:   { mood: 'Effortless. Playful.',             pieces: ['Sheer blouse ทับ camisole', 'Pleated midi skirt ในโทน <em>palette</em>', 'Mary Jane flat หรือ ballerina', 'Layered fine chains หลายเส้น'] },
-      evening:   { mood: 'Light. Romantic. Soft.',           pieces: ['Chiffon dress สี <em>palette</em>', 'Kitten heel หรือ strappy sandal', 'Hair clip คริสตัล', 'Mismatched earrings สนุกๆ'] },
-      statement: { mood: 'Quietly daring.',                  pieces: ['Trench coat ในโทน <em>palette</em>', 'Silk square scarf ผูกคอ', 'Polished oxford หรือ loafer', 'Stack of fine bracelets'] }
-    },
-    water: {
-      daytime:   { mood: 'Dreamy. Gentle. Considered.',      pieces: ['Silk shirt สี <em>palette</em>', 'Bias-cut midi skirt', 'Ballet flat หรือ low-heel', 'Pearl drops หรือ studs'] },
-      evening:   { mood: 'Mysterious. Poetic.',              pieces: ['Slip dress satin หรือ silk', 'Satin slingback', 'Vintage box clutch', 'Long pearl strand เส้นยาว'] },
-      statement: { mood: 'Like moonlight.',                   pieces: ['Maxi cape หรือ wide coat', 'Silk slip ใส่ใต้', 'Heeled ankle boot ขัดเงา', 'Vintage brooch หรือ cameo'] }
-    }
   };
 
   const TECHNIQUE = [
@@ -1038,7 +928,6 @@
     btn.className = 'season-card';
     btn.dataset.season = key;
     btn.innerHTML = `
-      <div class="season-num">N° ${s.num}</div>
       <div class="season-name">${s.en}</div>
       <div class="season-th">${s.th}</div>
       <div class="season-swatches">${s.colors.map(c => `<span style="background:${c}"></span>`).join('')}</div>
@@ -1162,42 +1051,11 @@
 
     const paletteEl = document.getElementById('palette');
     paletteEl.innerHTML = palette.map(c => `
-      <button class="swatch" data-color="${c}" type="button">
+      <div class="swatch">
         <div class="swatch-color" style="background:${c}"></div>
         <div class="swatch-hex">${c.toUpperCase()}</div>
-      </button>
+      </div>
     `).join('');
-    paletteEl.querySelectorAll('.swatch').forEach(btn => {
-      btn.addEventListener('click', async () => {
-        try { await navigator.clipboard.writeText(btn.dataset.color); } catch(e) {}
-        btn.classList.add('copied');
-        const hex = btn.querySelector('.swatch-hex');
-        const orig = hex.textContent;
-        hex.textContent = 'copied';
-        setTimeout(() => { btn.classList.remove('copied'); hex.textContent = orig; }, 1100);
-      });
-    });
-
-    const styleData = STYLE_BY_ELEMENT[z.elKey];
-    const lookOrder = [
-      { key: 'daytime',   num: 'N° 01', title: 'Daytime',   sub: 'For working hours' },
-      { key: 'evening',   num: 'N° 02', title: 'Evening',   sub: 'Dinner & dates' },
-      { key: 'statement', num: 'N° 03', title: 'Statement', sub: 'Special occasions' }
-    ];
-    document.getElementById('looksGrid').innerHTML = lookOrder.map(l => {
-      const data = styleData[l.key];
-      return `
-        <div class="look">
-          <div class="look-meta">
-            <div class="look-num">${l.num}</div>
-            <h4>${l.title}</h4>
-            <p class="look-mood">${l.sub}<br><em>${data.mood}</em></p>
-          </div>
-          <ul class="look-pieces">${data.pieces.map(p => `<li>${p}</li>`).join('')}</ul>
-        </div>
-      `;
-    }).join('');
-
     document.getElementById('techniqueGrid').innerHTML = TECHNIQUE.map(t => `
       <div>
         <div class="t-num">${t.num}</div>
