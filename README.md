@@ -17,10 +17,12 @@ Enter your name, date of birth, and personal colour season — receive:
 It's a single static HTML file — no build, no server.
 
 ```bash
-open form.html
+open index.html
 ```
 
-Or double-click `form.html`. Works in any modern browser.
+Or double-click `index.html`. Works in any modern browser.
+
+Live demo: https://komkrichr.github.io/ColourOfYourSoul/ (enable GitHub Pages in repo settings)
 
 ## Tech
 
