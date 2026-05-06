@@ -1,0 +1,11 @@
+node_modules/
+package-lock.json
+registrations.json
+uploads/
+.claude/
+app.py
+server.js
+package.json
+*.log
+.DS_Store
+Thumbs.db
